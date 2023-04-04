@@ -96,6 +96,8 @@ const writeData = async (fileDir, data) => {
     console.log("fileName=>", fileName);
     data = typeof data != "object" ? JSON.parse(data) : data;
     data._id = uniqId;
+    data.createdAt = new Date();
+    data.updatedAt = new Date();
     data = JSON.stringify(data);
     console.log("data==>", data);
     const res = await writeFile(path.join(fileDir, fileName), data, {
@@ -124,7 +126,7 @@ const updateFile = async (fileDir, data) => {
     // const fileName = `${uuid.v4()}.json`;
     // console.log("fileName=>", fileName);
     data = typeof data != "object" ? JSON.parse(data) : data;
-    // data._id = fileName;
+    data.updatedAt = new Date();
     data = JSON.stringify(data);
     console.log("data==>", data);
     const res = await writeFile(fileDir, data, {
