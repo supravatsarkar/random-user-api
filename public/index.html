@@ -8,9 +8,38 @@
   </head>
   <body>
     <h2>Random USER API</h2>
-    <h4>APIs list</h4>
+    <h4>## API END POINTS</h4>
     <ol>
-      <li>GET /</li>
+      Host:
+      <a href="https://random-user-api-r5vz.onrender.com/"
+        >https://random-user-api-r5vz.onrender.com/</a
+      >
+    </ol>
+    <ol>
+      GET | "{host}/user/random" => get random user
+    </ol>
+
+    <ol>
+      GET | "{host}/user/all" => get all users with payload=>query:{skip:10,
+      limit:10}
+    </ol>
+    <ol>
+      POST | "{host}/user/all/save" => add user payload=> body {gender,
+      male,name,contact,address,photoUrl}. We generate \_id, createAt, updatedAt
+      properties by default.
+    </ol>
+    <ol>
+      PATCH | "{host}/user/update", Update single user. payload=> body {\_id:for
+      find user, necessary update property}.
+    </ol>
+    <ol>
+      PATCH | "{host}/user/bulk-update", Update multiple user with array of
+      object of user updating data. payload=> body [{_id:for find user,
+      necessary update property}].
+    </ol>
+    <ol>
+      DELETE | "{host}/user/delete", Delete single user. payload=> body
+      {\_id:for find user}.
     </ol>
   </body>
 </html>

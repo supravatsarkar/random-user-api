@@ -6,6 +6,8 @@
 
 ## API END POINTS
 
+- Host: https://random-user-api-r5vz.onrender.com/
+
 - GET | "{host}/user/random" => get random user
 
 - GET | "{host}/user/all" => get all users with payload=>query:{skip:10, limit:10}
